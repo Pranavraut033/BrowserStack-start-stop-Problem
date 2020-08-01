@@ -21,11 +21,6 @@ class Browser {
     return new Promise((resolve) => {
       try {
         launcher.detect((browsers) => {
-          console.log(
-            browsers,
-            browsers.find((ev) => ev.name == this.name),
-            this.name
-          );
           resolve(!browsers.find((ev) => ev.name == this.name));
         });
       } catch (error) {
@@ -50,6 +45,7 @@ class Browser {
       });
     });
   }
+
   cleanUp() {
     this.stop();
 
@@ -72,6 +68,7 @@ class Browser {
       });
     });
   }
+
   stop() {
     if (this.isRunning()) return this.instance.stop();
   }
