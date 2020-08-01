@@ -7,7 +7,7 @@ import queryPaser from "./utils/queryPaser";
 
 import { urlencoded, json } from "body-parser";
 
-global.APP_ROOT = process.cwd();
+// global.APP_ROOT = process.cwd();
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(logger("dev"));
 app.use(json());
 app.use(urlencoded({ extended: true }));
 app.use(queryPaser);
-app.user(router);
+app.use(router);
 
 app.use("*", (_, res) => res.status(404).send(res, "Page not found"));
 
