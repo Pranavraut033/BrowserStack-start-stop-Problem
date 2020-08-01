@@ -1,0 +1,33 @@
+{
+  "name": "start-stop-browser",
+  "version": "1.0.0",
+  "description": "Browserstack round 1 sub 1",
+  "main": "dist/index.js",
+  "author": "Pranav ",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "set NODE_ENV=testing & mocha --require @babel/register './src/test/*.test.js'",
+    "build": "babel src --out-dir dist",
+    "start": "set NODE_ENV=production & node dist/index.js",
+    "serve": "set NODE_ENV=development & nodemon --exec babel-node src/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "core-js": "^3.6.5",
+    "express": "^4.17.1",
+    "mocha": "^8.1.0",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
+    "querystring": "^0.2.0",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "nodemon": "^2.0.4"
+  }
+}
